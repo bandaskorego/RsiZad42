@@ -4,28 +4,49 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 
 namespace WcfContract
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    public class Service1 : IService1
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    public class BankManager : IBankManager
     {
-        public string GetData(int value)
+        Worker[] workers = new Worker[100];
+        int count = 0;
+        IBankManagerCallback callback = null;
+
+        public BankManager()
         {
-            return string.Format("You entered: {0}", value);
+            callback = OperationContext.Current.GetCallbackChannel<IBankManagerCallback>();
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public void addWorker(Worker w)
         {
-            if (composite == null)
+            Console.WriteLine("Adding worker:");
+            w.id = count;
+            this.workers[count] = w;
+            Console.WriteLine(this.workers[count]);
+            count++;
+            return;
+        }
+
+        public Worker[] getAll()
+        {
+            return this.workers;
+        }
+
+        public void getCountOfWorkersWithSalaryGreaterThen(double salary)
+        {
+            Console.WriteLine("Obliczam ilość studentów ze średnią wyższą niż: " + salary);
+            int c = 0;
+            for (int i = 0; i < this.count; i++)
             {
-                throw new ArgumentNullException("composite");
+                if (this.workers[i].salary > salary) c++;
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            Thread.Sleep(3000);
+            Console.WriteLine("Przekazuje wynik: " + c);
+            callback.Wynik(c);
+            return;
         }
     }
 }

@@ -1,0 +1,8 @@
+D:\RSI\C#LearningTask\RsiZad42\Client\bin\Debug\Client.exe.config
+D:\RSI\C#LearningTask\RsiZad42\Client\bin\Debug\Client.exe
+D:\RSI\C#LearningTask\RsiZad42\Client\bin\Debug\Client.pdb
+D:\RSI\C#LearningTask\RsiZad42\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\RSI\C#LearningTask\RsiZad42\Client\obj\Debug\Client.exe
+D:\RSI\C#LearningTask\RsiZad42\Client\obj\Debug\Client.pdb
+D:\RSI\C#LearningTask\RsiZad42\Client\bin\Debug\WcfContract.dll
+D:\RSI\C#LearningTask\RsiZad42\Client\bin\Debug\WcfContract.pdb

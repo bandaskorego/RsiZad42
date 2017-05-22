@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53cbd6fb-5d47-4175-9169-d884d1c8fd8e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:10003" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ae80e9c8-6f69-443d-9389-030250590d4b" SourceId="1" SourceUrl="http://localhost:10003/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="8b32ecac-cbd0-4020-b0ee-923957022385" SourceId="1" SourceUrl="http://localhost:10003/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="0e544823-1e16-426b-aacf-5f78e73d15e3" SourceId="1" SourceUrl="http://localhost:10003/?xsd=xsd0" />
+    <MetadataFile FileName="BankManager.wsdl" MetadataType="Wsdl" ID="836fb70e-79f1-4a46-b7a5-c95dc2998a9f" SourceId="1" SourceUrl="http://localhost:10003/?wsdl" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="e12627cb-0306-49fb-b7e3-13ab914e4e6c" SourceId="1" SourceUrl="http://localhost:10003/?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

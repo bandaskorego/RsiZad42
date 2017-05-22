@@ -1,0 +1,5 @@
+D:\RSI\C#LearningTask\RsiZad42\WcfContract\bin\Debug\WcfContract.dll.config
+D:\RSI\C#LearningTask\RsiZad42\WcfContract\bin\Debug\WcfContract.dll
+D:\RSI\C#LearningTask\RsiZad42\WcfContract\bin\Debug\WcfContract.pdb
+D:\RSI\C#LearningTask\RsiZad42\WcfContract\obj\Debug\WcfContract.dll
+D:\RSI\C#LearningTask\RsiZad42\WcfContract\obj\Debug\WcfContract.pdb

@@ -1,0 +1,8 @@
+D:\RSI\C#LearningTask\RsiZad42\Host\bin\Debug\Host.exe.config
+D:\RSI\C#LearningTask\RsiZad42\Host\bin\Debug\Host.exe
+D:\RSI\C#LearningTask\RsiZad42\Host\bin\Debug\Host.pdb
+D:\RSI\C#LearningTask\RsiZad42\Host\bin\Debug\WcfContract.dll
+D:\RSI\C#LearningTask\RsiZad42\Host\bin\Debug\WcfContract.pdb
+D:\RSI\C#LearningTask\RsiZad42\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
+D:\RSI\C#LearningTask\RsiZad42\Host\obj\Debug\Host.exe
+D:\RSI\C#LearningTask\RsiZad42\Host\obj\Debug\Host.pdb

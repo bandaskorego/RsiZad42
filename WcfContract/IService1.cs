@@ -7,39 +7,63 @@ using System.Text;
 
 namespace WcfContract
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
-    [ServiceContract]
-    public interface IService1
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IBankManager" in both code and config file together.
+    [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(IBankManagerCallback))]
+    public interface IBankManager
     {
         [OperationContract]
-        string GetData(int value);
+        void addWorker(Worker w);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        Worker[] getAll();
 
-        // TODO: Add your service operations here
+        [OperationContract(IsOneWay = true)]
+        void getCountOfWorkersWithSalaryGreaterThen(double avg);
     }
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfContract.ContractType".
-    [DataContract]
-    public class CompositeType
+    public interface IBankManagerCallback
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        [OperationContract(IsOneWay = true)]
+        void Wynik(int count);
+
+    }
+
+
+    [DataContract]
+    public class Worker
+    {
+        string opis = "Worker";
 
         [DataMember]
-        public bool BoolValue
+        public int id;
+
+        [DataMember]
+        public double salary;
+
+        [DataMember]
+        public String name;
+
+        [DataMember]
+        public String image;
+
+        [DataMember]
+        public string Opis
         {
-            get { return boolValue; }
-            set { boolValue = value; }
+            get { return opis; }
+            set { opis = value; }
         }
 
-        [DataMember]
-        public string StringValue
+        public Worker(String name, double avg)
         {
-            get { return stringValue; }
-            set { stringValue = value; }
+            this.name = name;
+            this.salary = avg;
+        }
+
+        public override string ToString()
+        {
+            return this.id + ") " + this.name + " - " + this.salary;
         }
     }
 }
+
+
