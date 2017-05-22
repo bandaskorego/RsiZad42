@@ -1,8 +1,0 @@
-D:\RSI\C#LearningTask\RsiZad42\Client1\bin\Debug\Client1.exe.config
-D:\RSI\C#LearningTask\RsiZad42\Client1\bin\Debug\Client1.exe
-D:\RSI\C#LearningTask\RsiZad42\Client1\bin\Debug\Client1.pdb
-D:\RSI\C#LearningTask\RsiZad42\Client1\bin\Debug\WcfContract.dll
-D:\RSI\C#LearningTask\RsiZad42\Client1\bin\Debug\WcfContract.pdb
-D:\RSI\C#LearningTask\RsiZad42\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
-D:\RSI\C#LearningTask\RsiZad42\Client1\obj\Debug\Client1.exe
-D:\RSI\C#LearningTask\RsiZad42\Client1\obj\Debug\Client1.pdb
