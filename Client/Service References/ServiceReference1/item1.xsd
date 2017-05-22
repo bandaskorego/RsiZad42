@@ -28,14 +28,26 @@
   <xs:element name="getCountOfWorkersWithSalaryGreaterThen">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="avg" type="xs:double" />
+        <xs:element minOccurs="0" name="salary" type="xs:double" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLowestPaidWorker">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="Wynik">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lowestPaid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfContract" minOccurs="0" name="w" nillable="true" type="q3:Worker" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

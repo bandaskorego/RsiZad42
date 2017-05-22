@@ -218,7 +218,53 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBankManager_getLowestPaidWorker_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IBankManager_Wynik_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBankManager_lowestPaid_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -263,8 +309,14 @@
   <wsdl:message name="IBankManager_getCountOfWorkersWithSalaryGreaterThen_InputMessage">
     <wsdl:part name="parameters" element="tns:getCountOfWorkersWithSalaryGreaterThen" />
   </wsdl:message>
+  <wsdl:message name="IBankManager_getLowestPaidWorker_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLowestPaidWorker" />
+  </wsdl:message>
   <wsdl:message name="IBankManager_Wynik_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:Wynik" />
+  </wsdl:message>
+  <wsdl:message name="IBankManager_lowestPaid_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:lowestPaid" />
   </wsdl:message>
   <wsdl:portType msc:usingSession="true" name="IBankManager">
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="addWorker">
@@ -278,8 +330,14 @@
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getCountOfWorkersWithSalaryGreaterThen">
       <wsdl:input wsaw:Action="http://tempuri.org/IBankManager/getCountOfWorkersWithSalaryGreaterThen" message="tns:IBankManager_getCountOfWorkersWithSalaryGreaterThen_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="getLowestPaidWorker">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankManager/getLowestPaidWorker" message="tns:IBankManager_getLowestPaidWorker_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Wynik">
       <wsdl:output wsaw:Action="http://tempuri.org/IBankManager/Wynik" message="tns:IBankManager_Wynik_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="lowestPaid">
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankManager/lowestPaid" message="tns:IBankManager_lowestPaid_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSDualHttpBinding_IBankManager" type="tns:IBankManager">
@@ -314,10 +372,24 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="getLowestPaidWorker">
+      <soap12:operation soapAction="http://tempuri.org/IBankManager/getLowestPaidWorker" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBankManager_getLowestPaidWorker_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="Wynik">
       <soap12:operation soapAction="http://tempuri.org/IBankManager/Wynik" style="document" />
       <wsdl:output>
         <wsp:PolicyReference URI="#WSDualHttpBinding_IBankManager_Wynik_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lowestPaid">
+      <soap12:operation soapAction="http://tempuri.org/IBankManager/lowestPaid" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBankManager_lowestPaid_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

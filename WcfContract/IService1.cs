@@ -18,13 +18,18 @@ namespace WcfContract
         Worker[] getAll();
 
         [OperationContract(IsOneWay = true)]
-        void getCountOfWorkersWithSalaryGreaterThen(double avg);
+        void getCountOfWorkersWithSalaryGreaterThen(double salary);
+
+        [OperationContract(IsOneWay = true)]
+        void getLowestPaidWorker();
     }
 
     public interface IBankManagerCallback
     {
         [OperationContract(IsOneWay = true)]
         void Wynik(int count);
+        [OperationContract(IsOneWay = true)]
+        void lowestPaid(Worker w);
 
     }
 

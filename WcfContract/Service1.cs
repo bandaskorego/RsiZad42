@@ -37,7 +37,7 @@ namespace WcfContract
 
         public void getCountOfWorkersWithSalaryGreaterThen(double salary)
         {
-            Console.WriteLine("Obliczam ilość studentów ze średnią wyższą niż: " + salary);
+            Console.WriteLine("Obliczamy ilosc bankierow z pesja powyzej: " + salary);
             int c = 0;
             for (int i = 0; i < this.count; i++)
             {
@@ -46,6 +46,22 @@ namespace WcfContract
             Thread.Sleep(3000);
             Console.WriteLine("Przekazuje wynik: " + c);
             callback.Wynik(c);
+            return;
+        }
+
+        public void getLowestPaidWorker()
+        {
+            Console.WriteLine("Szukam najslabiej oplacanego bankiera ");
+            Worker w =null;
+            double c = 100000000.0d;
+            for (int i = 0; i < this.count; i++)
+            {
+                if (this.workers[i].salary < c)
+                    w = this.workers[i];
+            }
+            Thread.Sleep(2000);
+            Console.WriteLine("Przekazuje wynik: {0}", w.name);
+            callback.lowestPaid(w);
             return;
         }
     }

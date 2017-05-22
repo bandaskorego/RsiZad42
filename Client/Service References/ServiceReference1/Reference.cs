@@ -28,10 +28,16 @@ namespace Client.ServiceReference1 {
         System.Threading.Tasks.Task<WcfContract.Worker[]> getAllAsync();
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IBankManager/getCountOfWorkersWithSalaryGreaterThen")]
-        void getCountOfWorkersWithSalaryGreaterThen(double avg);
+        void getCountOfWorkersWithSalaryGreaterThen(double salary);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IBankManager/getCountOfWorkersWithSalaryGreaterThen")]
-        System.Threading.Tasks.Task getCountOfWorkersWithSalaryGreaterThenAsync(double avg);
+        System.Threading.Tasks.Task getCountOfWorkersWithSalaryGreaterThenAsync(double salary);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IBankManager/getLowestPaidWorker")]
+        void getLowestPaidWorker();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IBankManager/getLowestPaidWorker")]
+        System.Threading.Tasks.Task getLowestPaidWorkerAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -39,6 +45,9 @@ namespace Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IBankManager/Wynik")]
         void Wynik(int count);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IBankManager/lowestPaid")]
+        void lowestPaid(WcfContract.Worker w);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -85,12 +94,20 @@ namespace Client.ServiceReference1 {
             return base.Channel.getAllAsync();
         }
         
-        public void getCountOfWorkersWithSalaryGreaterThen(double avg) {
-            base.Channel.getCountOfWorkersWithSalaryGreaterThen(avg);
+        public void getCountOfWorkersWithSalaryGreaterThen(double salary) {
+            base.Channel.getCountOfWorkersWithSalaryGreaterThen(salary);
         }
         
-        public System.Threading.Tasks.Task getCountOfWorkersWithSalaryGreaterThenAsync(double avg) {
-            return base.Channel.getCountOfWorkersWithSalaryGreaterThenAsync(avg);
+        public System.Threading.Tasks.Task getCountOfWorkersWithSalaryGreaterThenAsync(double salary) {
+            return base.Channel.getCountOfWorkersWithSalaryGreaterThenAsync(salary);
+        }
+        
+        public void getLowestPaidWorker() {
+            base.Channel.getLowestPaidWorker();
+        }
+        
+        public System.Threading.Tasks.Task getLowestPaidWorkerAsync() {
+            return base.Channel.getLowestPaidWorkerAsync();
         }
     }
 }

@@ -29,9 +29,12 @@ namespace Client
             client.addWorker(new Worker("Marek Panecki", 7000.0D));
 
             Worker[] workers = client.getAll();
-
+            Console.WriteLine("Ilosc powyzej 7000");
             client.getCountOfWorkersWithSalaryGreaterThen(7000D);
-            Thread.Sleep(5000);
+            Console.WriteLine("Najmniejsza pensja");
+            client.getLowestPaidWorker();
+
+            Thread.Sleep(7000);
             //Console.WriteLine(workers[0].ToString());
             Console.WriteLine("Koniec.");
 
@@ -41,10 +44,16 @@ namespace Client
 
         public class mojCallbackHandler : ServiceReference1.IBankManagerCallback
         {
+            public void lowestPaid(Worker w)
+            {
+                Console.WriteLine("Najgorzej oplacany pracownik to ({0}, zarabia:{1} )", w.name,w.salary);
+            }
+
             public void Wynik(int count)
             {
                 Console.WriteLine("Rezultat({0})", count);
             }
+
         }
     }
 }
